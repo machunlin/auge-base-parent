@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.auge</groupId>
-        <artifactId>augo-auth-parent</artifactId>
+        <artifactId>augo-base-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>augo-auth-service</artifactId>
+    <artifactId>augo-base-service</artifactId>
     <packaging>jar</packaging>
-    <name>augo-auth-service</name>
+    <name>augo-base-service</name>
 
     <properties>
         <start.class>com.auge.auth.service.AuthorityService</start.class>
@@ -252,7 +252,7 @@
 
         <dependency>
             <groupId>com.auge</groupId>
-            <artifactId>augo-auth-common</artifactId>
+            <artifactId>augo-base-common</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 

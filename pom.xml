@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.auge</groupId>
-    <artifactId>augo-auth-parent</artifactId>
+    <artifactId>augo-base-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>augo-auth-service-parent</name>
+    <name>augo-base-service-parent</name>
     <description>基础用户、权限管理</description>
 
     <modules>
