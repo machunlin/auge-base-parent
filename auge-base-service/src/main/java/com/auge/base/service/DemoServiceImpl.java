@@ -37,4 +37,10 @@ public class DemoServiceImpl implements DemoService {
         System.out.println("Client address from @Context injection: " + (request != null ? request.getRemoteAddr() : ""));
         return userDto;
     }
+
+    @GET
+    @Path("test")
+    public void test(@Context HttpServletRequest request) {
+        System.out.println("Client address from @Context injection: " + (request != null ? request.getRemoteAddr() : ""));
+    }
 }

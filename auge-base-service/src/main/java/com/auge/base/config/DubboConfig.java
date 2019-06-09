@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
  * @date 2019/6/6
  */
 @Configuration
-@EnableDubbo(scanBasePackages = "com.augo.base")
+@EnableDubbo(scanBasePackages = "com.auge.base")
 @EnableDubboConfig //启用外部化配置
 @PropertySource("classpath:/dubbo-provider.properties")
 public class DubboConfig {
