@@ -2,6 +2,8 @@ package com.auge.base.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
@@ -10,42 +12,31 @@ import java.io.Serializable;
  */
 public class UserDto implements Serializable {
     @JsonProperty("name")
-//    @NotNull
-//    @Size(min = 6, max = 50)
+    @NotNull
+    @Size(min = 6, max = 50)
     private String name;
-    private int age;
+
+    private Integer age;
 
     public UserDto() {
     }
 
-    public UserDto(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
+    @NotNull
     public String getName() {
         return name;
     }
 
-    public UserDto setName(String name) {
+    public UserDto setName(@NotNull String name) {
         this.name = name;
         return this;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public UserDto setAge(int age) {
+    public UserDto setAge(Integer age) {
         this.age = age;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
     }
 }
