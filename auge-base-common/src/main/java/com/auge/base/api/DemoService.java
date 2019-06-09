@@ -22,8 +22,8 @@ import javax.ws.rs.core.MediaType;
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 public interface DemoService {
     @GET
-    @Path("hello/{name}")
-    UserDto sayHello(@Size(min = 3, max = 20) @PathParam("name") String name);
+    @Path("add/{name}")
+    UserDto addUser(@Size(min = 3, max = 20) @PathParam("name") String name);
 
     @POST
     @Path("haha")
