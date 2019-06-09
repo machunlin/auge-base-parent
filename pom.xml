@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.auge</groupId>
-    <artifactId>augo-base-parent</artifactId>
+    <artifactId>auge-base-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>augo-base-service-parent</name>
+    <name>auge-base-service-parent</name>
     <description>基础用户、权限管理</description>
 
     <modules>
-        <module>augo-base-common</module>
-        <module>augo-base-service</module>
+        <module>auge-base-common</module>
+        <module>auge-base-service</module>
     </modules>
 
     <properties>
