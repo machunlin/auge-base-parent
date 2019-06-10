@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
+ * 对外暴露的restful风格的接口实现类。
  * @author machunlin
  * @date 2019/6/9
  */
+/*dubbo service注解， validation：启动参数格式校验*/
 @Service(validation = "true")
 public class DemoServcieApi implements DemoService {
     @Autowired

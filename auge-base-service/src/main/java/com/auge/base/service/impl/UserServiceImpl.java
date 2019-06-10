@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
  * @author machunlin
  * @date 2019-06-09
  */
+/*业务逻辑实现类，spring service注解*/
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
