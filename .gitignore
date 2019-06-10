@@ -1,0 +1,7 @@
+### common ###
+target
+logs
+
+### idea ###
+.idea
+*.iml
