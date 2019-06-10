@@ -17,16 +17,12 @@ public class DemoServcieApi implements DemoService {
     @Autowired
     private UserService userService;
 
-//    @Autowired
-//    private UserMapper userMapper;
-
     @Override
     @Transactional(rollbackFor = Exception.class, timeout = 5000)
     public UserDto addUser(String name) {
         User user = new User();
         user.setAge(11);
         user.setName(name);
-//        userMapper.insert(user);
         userService.insert(user);
 
         UserDto dto = new UserDto();

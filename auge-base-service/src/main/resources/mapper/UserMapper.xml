@@ -18,6 +18,6 @@
         a.id,
         a.name,
         a.age,
-        </sql>
+    </sql>
 
 </mapper>
