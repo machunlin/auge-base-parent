@@ -15,9 +15,9 @@ dubbo:
 
 spring:
   datasource:
-    url: jdbc:mysql://119.3.105.213:3306/base?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=false
-    username: root
-    password: 1024@Augo
+    url: jdbc:mysql://{ip}:3306/{db_name}?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=false
+    username: {user_name}
+    password: {password}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 ## mybatis
