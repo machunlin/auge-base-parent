@@ -32,7 +32,7 @@ http://localhost:8088/demo/add/testusername
    - vo包，是接口请求参数POJO类;
     - DTO是接口返回参数的POJO类。
 
-- auge-base-server项目:
+- auge-base-service项目:
    - api包是暴露的dubbo api接口实现类，注意：此包下的 XXXServiceApi.java 类引用的是dubbo 的@Service注解（不要和spring的@servie注解搞混了）
    - service包下，是正常的业务逻辑代码，注意：此包下的XXXServiceImpl.java类引用的是spring的@Service注解。
 
