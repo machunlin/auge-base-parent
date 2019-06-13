@@ -4,6 +4,8 @@ import com.auge.base.dto.UserDto;
 import com.auge.base.model.User;
 import com.auge.base.service.UserService;
 import org.apache.dubbo.config.annotation.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,12 +18,15 @@ import org.springframework.transaction.annotation.Transactional;
 /*dubbo service注解， validation：启动参数格式校验*/
 @Service(validation = "true")
 public class DemoServcieApi implements DemoService {
+    private static final Logger LOGGER = LogManager.getLogger(DemoServcieApi.class);
+
     @Autowired
     private UserService userService;
 
     @Override
     @Transactional(rollbackFor = Exception.class, timeout = 5000)
     public UserDto addUser(String name) {
+        LOGGER.error("测试日志级别{}",name);
         User user = new User();
         user.setAge(11);
         user.setName(name);
