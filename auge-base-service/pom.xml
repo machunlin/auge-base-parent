@@ -20,10 +20,9 @@
         <dubbo.version>2.7.2</dubbo.version>
         <dubbo.groupId>org.apache.dubbo</dubbo.groupId>
         <sharding.jdbc.version>2.0.0.M3</sharding.jdbc.version>
-        <validation-api.version>1.1.0.Final</validation-api.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
         <hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
         <curator.version>4.0.1</curator.version>
-        <curator-client.version>4.0.1</curator-client.version>
         <zookeeper.version>3.4.13</zookeeper.version>
         <swagger.version>1.5.19</swagger.version>
         <tomcat.version>7.0.88</tomcat.version>
@@ -52,7 +51,7 @@
 
             <!-- Aapche Dubbo  -->
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
+                <groupId>${dubbo.groupId}</groupId>
                 <artifactId>dubbo-dependencies-bom</artifactId>
                 <version>${dubbo.version}</version>
                 <type>pom</type>
@@ -60,7 +59,13 @@
             </dependency>
 
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
+                <groupId>${dubbo.groupId}</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>2.7.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${dubbo.groupId}</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
                 <exclusions>
@@ -71,20 +76,31 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
+                <groupId>${dubbo.groupId}</groupId>
                 <artifactId>dubbo-rpc-rest</artifactId>
                 <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${dubbo.groupId}</groupId>
+                <artifactId>dubbo-configcenter-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
                 <version>${validation-api.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>${hibernate-validator.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.hibernate</groupId>-->
+                <!--<artifactId>hibernate-validator</artifactId>-->
+                <!--<version>${hibernate-validator.version}</version>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
@@ -100,30 +116,17 @@
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
                 <version>${zookeeper.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-framework</artifactId>
-                <version>${curator.version}</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.apache.zookeeper</groupId>
-                        <artifactId>zookeeper</artifactId>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-client</artifactId>
-                <version>${curator-client.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.zookeeper</groupId>
-                        <artifactId>zookeeper</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -138,64 +141,31 @@
         <dependency>
             <groupId>${dubbo.groupId}</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>2.7.1</version>
         </dependency>
 
         <dependency>
             <groupId>${dubbo.groupId}</groupId>
             <artifactId>dubbo</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.thrift</groupId>
-                    <artifactId>libthrift</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.netty</groupId>
-                    <artifactId>netty</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.zookeeper</groupId>
-                    <artifactId>zookeeper</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
+            <groupId>${dubbo.groupId}</groupId>
             <artifactId>dubbo-configcenter-zookeeper</artifactId>
-            <version>2.7.1</version>
         </dependency>
 
         <dependency>
             <groupId>${dubbo.groupId}</groupId>
             <artifactId>dubbo-rpc-rest</artifactId>
-            <version>2.7.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-core</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-logging-juli</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
         </dependency>
 
         <dependency>
@@ -210,9 +180,8 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>2.0.1.Final</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
         </dependency>
 
         <dependency>
@@ -245,11 +214,6 @@
         </dependency>
 
         <!--DB连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.14</version>
-        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

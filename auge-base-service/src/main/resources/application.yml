@@ -15,10 +15,16 @@ dubbo:
 
 spring:
   datasource:
-    url: jdbc:mysql://{ip}:3306/{db_name}?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=false
-    username: {user_name}
-    password: {password}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${host:localhost}:${port:3306}/${db_name:demo}?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=false
+    username: ${user_name:root}
+    password: ${password:password}
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      minimum-idle: 3
+      maximum-pool-size: 8
+      connection-test-query: SELECT 1
+      connection-timeout: 6000
 
 ## mybatis
 mybatis-plus:
