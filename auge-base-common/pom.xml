@@ -17,7 +17,7 @@
     <properties>
         <dubbo.version>2.7.2</dubbo.version>
         <validation-api.version>1.1.0.Final</validation-api.version>
-        <hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
+        <hibernate-validator.version>5.3.5.Final</hibernate-validator.version>
     </properties>
     <build>
         <plugins>
