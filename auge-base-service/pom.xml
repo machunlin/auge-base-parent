@@ -17,7 +17,7 @@
     <properties>
         <start.class>com.auge.auth.service.AuthorityService</start.class>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
-        <dubbo.version>2.7.2</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
         <dubbo.groupId>org.apache.dubbo</dubbo.groupId>
         <sharding.jdbc.version>2.0.0.M3</sharding.jdbc.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
