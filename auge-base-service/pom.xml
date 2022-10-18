@@ -25,7 +25,7 @@
         <curator.version>4.0.1</curator.version>
         <zookeeper.version>3.4.13</zookeeper.version>
         <swagger.version>1.5.19</swagger.version>
-        <tomcat.version>7.0.88</tomcat.version>
+        <tomcat.version>7.0.107</tomcat.version>
         <servlet.version>3.0.1</servlet.version>
     </properties>
 
